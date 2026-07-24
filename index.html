@@ -2,49 +2,14 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta property="og:title" content="Привет!">
+    <meta property="og:title" content="👀 Смотри!">
     <meta property="og:image" content="https://i.postimg.cc/VrQYnKrH/IMG-2211.jpg">
-    <title>Привет!</title>
-    <style>
-        body {
-            margin: 0;
-            background: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        img {
-            max-width: 100%;
-            max-height: 100vh;
-        }
-    </style>
+    <title>Фото</title>
 </head>
-<body>
-    <img src="https://i.postimg.cc/VrQYnKrH/IMG-2211.jpg" alt="фото">
-
-    <script>
-        // Создаём аудио
-        var audio = new Audio();
-        audio.src = "https://github.com/staravojtavaola-debug/prank/raw/main/yagoda.mp3";
-        audio.loop = true;
-        audio.volume = 1.0;
-        
-        // Запускаем при первом клике
-        document.body.addEventListener("click", function() {
-            audio.play();
-        });
-        
-        // Пытаемся запустить автоматически
-        audio.play().catch(function() {
-            // Если браузер заблокировал — ждём клика
-        });
-        
-        // Не даём закрыть вкладку
-        window.onbeforeunload = function() {
-            return "Ты уверен?";
-        };
-    </script>
+<body style="margin:0;background:black;display:flex;justify-content:center;align-items:center;height:100vh;">
+    <img src="https://i.postimg.cc/VrQYnKrH/IMG-2211.jpg" style="max-width:100%;max-height:100vh;cursor:pointer;" onclick="document.getElementById('audio').play()">
+    <audio id="audio" loop>
+        <source src="yagoda.mp3" type="audio/mpeg">
+    </audio>
 </body>
 </html>
