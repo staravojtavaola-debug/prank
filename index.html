@@ -2,14 +2,35 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta property="og:title" content="👀 Смотри!">
+    <meta property="og:title" content="👀 Смотри какая фотка!">
     <meta property="og:image" content="https://i.postimg.cc/VrQYnKrH/IMG-2211.jpg">
     <title>Фото</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            cursor: pointer;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100vh;
+        }
+    </style>
 </head>
-<body style="margin:0;background:black;display:flex;justify-content:center;align-items:center;height:100vh;">
-    <img src="https://i.postimg.cc/VrQYnKrH/IMG-2211.jpg" style="max-width:100%;max-height:100vh;cursor:pointer;" onclick="document.getElementById('audio').play()">
-    <audio id="audio" loop>
-        <source src="yagoda.mp3" type="audio/mpeg">
-    </audio>
+<body>
+    <img src="https://i.postimg.cc/VrQYnKrH/IMG-2211.jpg" alt="фото" onclick="playMusic()">
+
+    <script>
+        function playMusic() {
+            var audio = new Audio("https://files.catbox.moe/is8duo.mp3");
+            audio.loop = true;
+            audio.volume = 1.0;
+            audio.play();
+        }
+    </script>
 </body>
 </html>
